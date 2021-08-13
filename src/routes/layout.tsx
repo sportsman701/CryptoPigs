@@ -1,24 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import Sidebar from "~/components/Sidebar";
-import Footer from "~/components/HomeFooter";
+import * as S from "./layoutStyle";
 
 interface Props {
   component: React.FC,
-  layout: string,
+  props: React.ComponentProps<any>
 }
 
-const AppLayout : React.FC<Props> = ({component, layout}) => {
-  if(layout === 'dashboard'){
-    return (
-      <>{React.createElement(component)}</>
-    );
-  }
+const AppLayout : React.FC<Props> = ({component, props}) => {
+  const[openDrop, setOpenDrop] = useState(false);
+
   return (
-    <div>
-      <Sidebar />
-      {React.createElement(component)}
-      <Footer />
-    </div>
+    <S.Container>
+      <S.DropButton onClick={() => {console.log('open', openDrop); setOpenDrop(true);}} className={openDrop?"display-none":""}>
+        <span className="bg-black rounded"/>
+        <span className="bg-black rounded middle"/>
+        <span className="bg-black rounded"/>
+      </S.DropButton>
+      <Sidebar history={props.history} mini={openDrop} closeMini={() => setOpenDrop(false)}/>
+      <S.Main>
+        {React.createElement(component, props)}
+      </S.Main>
+    </S.Container>
   );
 }
 

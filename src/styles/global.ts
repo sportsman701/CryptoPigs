@@ -15,13 +15,19 @@ export default createGlobalStyle`
     font-size: 62.5%; /* 1rem = 10px */
   }
 
+  @font-face {
+    font-family: "Chango-Regular";
+    src: url(fonts/Chango-Regular.ttf);
+  }
+
   html,
   body,
   #root {
     min-width: 100%;
     height: 100%;
-    background: #000000;
-    color: #ffffff;
+    background: transparent;
+    color: #000000;
+    font-family: "Chango-Regular";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;

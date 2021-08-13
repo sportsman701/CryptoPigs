@@ -5,10 +5,9 @@ import AppLayout from "./layout";
 interface Props {
   path: string,
   component: React.FC,
-  layout: string,
 }
 
-const AppRoute : React.FC<Props> = ({path, component, layout}) => {
+const AppRoute : React.FC<Props> = ({path, component}) => {
   return (
     <Route
       path={path}
@@ -16,8 +15,8 @@ const AppRoute : React.FC<Props> = ({path, component, layout}) => {
       render={props => {
         return (
           <AppLayout
-            layout={layout}
             component={component}
+            props={props}
           />
         );
       }}

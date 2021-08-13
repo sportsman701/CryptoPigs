@@ -1,48 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as S from './styles';
+import Menu from "~/components/Sidebar/Menu";
 
 interface Props {
-
+  history: React.ComponentProps<any>,
+  mini: Boolean,
+  closeMini: Function
 }
 
 
-const Sidebar: React.FC<Props> = () => {
+const Sidebar: React.FC<Props> = ({history, mini, closeMini}) => {
+  const[connected, setConnected] = useState(true);
+
   return (
     <S.Container>
-      <S.Navbar>
-        <ul className="nav justify-content-center nav-fill w-full">
-          <li className="nav-item p-1">
-            <a href="#home">HOME</a>
-          </li>
-          <li className="nav-item p-1">
-            <a href="#features">FEATURES</a>
-          </li>
-          <li className="nav-item p-1">
-            <a href="#tokenomics">SCAREONOMICS</a>
-          </li>
-          <li className="nav-item p-1">
-            <a href="#roadmap">ROADMAP</a>
-          </li>
-        </ul>
+      <S.Navbar className={mini?"display-mini":""}>
+        {mini && <S.CloseContainer><S.CloseBtn size={40} onClick={() => (closeMini())}/></S.CloseContainer>}
         <S.Logo className="float-none">
           <a href="/">
             <img src={"/images/logo.png"} alt={"logo"}/>
           </a>
         </S.Logo>
-        <ul className="nav justify-content-center nav-fill w-full">
-          <li className="nav-item p-1">
-            <a target="_blank" href="/files/audit.pdf#toolbar=0">AUDIT</a>
-          </li>
-          <li className="nav-item p-1">
-            <a target="_blank" href="/files/whitepaper.pdf#toolbar=0">WHITEPAPER</a>
-          </li>
-          <li className="nav-item p-1">
-            <a target="_blank" href="https://bscscan.com/token/0x0952ddffde60786497c7ced1f49b4a14cf527f76">CONTRACT</a>
-          </li>
-          <li className="nav-item p-1">
-            <a href="/speedpass" target="_blank">SPEEDBUY</a>
-          </li>
-        </ul>
+        <S.Menus>
+          <Menu onClick={() => {closeMini();}} icon="/images/IconsPersonalLogin.svg" label={connected?"Hi, 0x000000000000000000000":"Connect Wallet"}/>
+          <Menu onClick={() => {closeMini();}} icon="/images/IconsMintPage.svg" label="Mint your own"/>
+          <Menu onClick={() => {history.push('/collection'); closeMini();}} icon="/images/IconsViewCollection.svg" label="View your collection"/>
+          <Menu onClick={() => {history.push('/all'); closeMini();}} icon="/images/IconsViewAllPigs.svg" label="View all minted pigs"/>
+          <Menu onClick={() => {history.push('/attribute'); closeMini();}} icon="/images/IconsPigAttributes.svg" label="Pig attributes"/>
+          <Menu onClick={() => {closeMini();}} icon="/images/IconsMarketplace.svg" label="Marketplace" subLabel="coming soon"/>
+        </S.Menus>
+        <S.Bottom>
+          <div className="farm--link"><a href="#">piggybank.farm</a></div>
+          <div className="social--link">
+            <a href=""><img src={"/images/SocialIconTelegram.svg"} alt={"telegram"}/></a>
+            <a href=""><img src={"/images/SocialIconTwitter.svg"} alt={"twitter"}/></a>
+            <a href=""><img src={"/images/SocialIconDiscord.svg"} alt={"discord"}/></a>
+          </div>
+        </S.Bottom>
       </S.Navbar>
     </S.Container>
   );

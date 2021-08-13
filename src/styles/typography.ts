@@ -3,8 +3,8 @@ export const fontUrl =
 
 export const typography = {
   type: {
-    title: '"Montserrat", sans-serif',
-    text: '"Ubuntu", sans-serif',
+    title: '"Chango-Regular"',
+    text: '"Chango-Regular"',
   },
   weight: {
     light: '300',
@@ -21,4 +21,11 @@ export const typography = {
     l2: '54',
     l3: '81',
   },
+
+  colors: {
+    main: '#ff4e91',
+    text: '#3c2f35',
+    label: '#6271a0',
+    menu: '#b24c4f',
+  }
 };

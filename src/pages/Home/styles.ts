@@ -1,60 +1,214 @@
 import styled from 'styled-components';
-import {ArrowRight} from '@styled-icons/bootstrap/ArrowRight';
-import {File} from '@styled-icons/boxicons-regular/File';
-import {FileBlank} from '@styled-icons/boxicons-regular/FileBlank';
-import {Telegram} from '@styled-icons/bootstrap/Telegram';
-import {Twitter} from '@styled-icons/bootstrap/Twitter';
-import {EmailOutline} from '@styled-icons/evaicons-outline/EmailOutline';
-import {ChartLine} from '@styled-icons/fa-solid/ChartLine';
-import {Check2Square} from '@styled-icons/bootstrap/Check2Square';
+import {typography} from "~/styles/typography";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
+  position: relative;
+  z-index: 0;
 
-  .home{
-      background-image: url(/images/bg_t.png);
-      background-size: cover;
-      background-repeat: no-repeat;
+  ::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background-image: url(/images/BackgroundFarm.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
 `;
 
+export const IntroduceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 10rem 0;
+  width: 100%;
+
+  @media (min-width: 1216px) {
+    display: flex;
+    flex-direction: row;
+  }
+`;
+
+export const Introduce = styled.div`
+  margin: 0 4rem;
+  margin-top: 24px;
+
+  @media (min-width: 1216px) {
+    width: 25%;
+    &.right--intro {
+      text-align: right;
+    }
+  }
+
+`;
+
+export const Title = styled.div`
+  color: ${typography.colors.main};
+  margin-bottom: 8px;
+`;
+
 export const Content = styled.div`
-    max-width: 1216px;
-    float: none;
-    margin: auto;
+  color: ${typography.colors.text};
+  font-size: 16px;
+  font-family: sans serif;
+  font-weight: bold;
 `;
 
-export const ArrowRightIcon = styled(ArrowRight)`
-  color: white;
-  margin-left: 8px
-`;
-export const FileIcon = styled(File)`
-  color: white;
-`;
-export const FileBlankIcon = styled(FileBlank)`
-  color: white;
+export const MintContainer = styled.div`
+  flex-grow: 1;
+  text-align: center;
 `;
 
-export const TelegramIcon = styled(Telegram)`
-  color: white;
+export const ButtonContainer = styled.div`
+  position: relative;
+  margin: 20px auto;
+  img{
+     width: 360px;
+     height: 360px;
+   }
+
+  @media (min-width: 1216px) {
+    margin: unset;
+    img{
+       width: 360px;
+       height: 360px;
+     }
+  }
 `;
 
-export const TwitterIcon = styled(Twitter)`
-  color: white;
+export const MintButton = styled.div`
+  position: absolute;
+  bottom: 48px;
+  width: 100%;
+  text-align: center;
 `;
 
-export const EmailIcon = styled(EmailOutline)`
-  color: white;
+export const Button = styled.div`
+  display: inline-block;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: ${typography.colors.main};
+  background-color: white;
+  font-size: 18px;
+  cursor: pointer;
+
+  :hover {
+    background-color: ${typography.colors.main};
+    color: white;
+  }
 `;
 
-export const ChartIcon = styled(ChartLine)`
-  color: white;
+export const MintLabel = styled.div`
+  margin-top: 16px;
+  color: ${typography.colors.label};
+  text-align: center;
 `;
 
-export const Check2SquareIcon = styled(Check2Square)`
-   color: #007bff;
-   margin-right: 8px;
+export const RecentMints = styled.div`
+  margin-top: 8rem;
+`;
+
+export const RecentLabel = styled.div`
+  text-align: center;
+  color: ${typography.colors.menu};
+  margin-bottom: 20px;
+  font-size: 18px;
+`;
+
+export const Mints = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 1216px) {
+    flex-direction: row;
+  }
+`;
+
+export const Mint = styled.div`
+  margin: 8px auto;
+  img{
+     width: 240px;
+     height: 240px;
+  }
+
+   @media (min-width: 1216px) {
+        margin: 0 8px;
+   }
+`;
+
+export const MiddleMint = styled.div`
+  margin: 0 8px;
+  img{
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (min-width: 1216px) {
+
+  }
+`;
+
+// Modal
+export const ModalBody = styled.div`
+  padding: 8px 12px;
+`;
+
+export const ModalTitle = styled.div`
+  color: ${typography.colors.text};
+  margin-bottom: 24px;
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  img{
+    width: 240px;
+    height: 240px;
+  }
+
+   @media (min-width: 768px) {
+    flex-direction: row;
+   }
+`;
+
+export const ContentDetail = styled.div`
+  margin: 20px 0 0 0;
+
+   @media (min-width: 768px) {
+    margin: 0 0 0 20px;
+   }
+`;
+
+export const DetailItem = styled.div`
+  margin-bottom: 8px;
+`;
+
+export const ItemTitle = styled.div`
+  color: ${typography.colors.menu};
+  font-size: 14px;
+`;
+
+export const ItemContent = styled.div`
+  color: ${typography.colors.main};
+  font-size: 14px;
+`;
+
+export const ModalAction = styled.div`
+  width: 100%;
+  text-align: right;
+`;
+
+export const ModalButton = styled.div`
+  display: inline-block;
+  background-color: ${typography.colors.main};
+  color: white;
+  border-radius: 8px;
+  padding: 8px 24px;
+  margin-top: 20px;
 `;
