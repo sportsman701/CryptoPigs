@@ -10,7 +10,7 @@ export const Main = styled.div`
   background-color: white;
   background-image: url(/images/BackgroundClouds.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   flex-grow: 1;
   background-attachment: fixed;
   min-height: 100vh;
@@ -30,6 +30,7 @@ export const DropButton = styled.div`
   border: solid 1px rgba(0,0,0,0.75);
   cursor: pointer;
   background: #feeef2;
+  z-index: 10;
 
   &.display-none{
     display: none !important;

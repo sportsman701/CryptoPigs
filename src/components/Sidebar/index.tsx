@@ -22,8 +22,8 @@ const Sidebar: React.FC<Props> = ({history, mini, closeMini}) => {
           </a>
         </S.Logo>
         <S.Menus>
-          <Menu onClick={() => {closeMini();}} icon="/images/IconsPersonalLogin.svg" label={connected?"Hi, 0x000000000000000000000":"Connect Wallet"}/>
-          <Menu onClick={() => {closeMini();}} icon="/images/IconsMintPage.svg" label="Mint your own"/>
+          <Menu onClick={() => {history.push('/'); closeMini();}} icon="/images/IconsPersonalLogin.svg" label={connected?"Hi, 0x000000000000000000000":"Connect Wallet"}/>
+          <Menu onClick={() => {history.push('/'); closeMini();}} icon="/images/IconsMintPage.svg" label="Mint your own"/>
           <Menu onClick={() => {history.push('/collection'); closeMini();}} icon="/images/IconsViewCollection.svg" label="View your collection"/>
           <Menu onClick={() => {history.push('/all'); closeMini();}} icon="/images/IconsViewAllPigs.svg" label="View all minted pigs"/>
           <Menu onClick={() => {history.push('/attribute'); closeMini();}} icon="/images/IconsPigAttributes.svg" label="Pig attributes"/>

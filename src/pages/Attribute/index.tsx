@@ -144,7 +144,7 @@ const Attributes: React.FC = () => {
 
   const renderCategory = (key : string) => {
       return (
-        <S.Category>
+        <S.Category key={key}>
           <S.CategoryTitle>{key}</S.CategoryTitle>
           <S.CategoryContent>
             {

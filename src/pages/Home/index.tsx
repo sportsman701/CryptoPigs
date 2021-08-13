@@ -64,7 +64,8 @@ const Home: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(60, 37, 53, 0.25)'
+            backgroundColor: 'rgba(60, 37, 53, 0.25)',
+            zIndex: 99,
           },
           content: {
             top: '50%',
