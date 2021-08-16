@@ -26,7 +26,7 @@ export const Container = styled.div`
 export const IntroduceContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10rem 0;
+  margin: 80px 0;
   width: 100%;
 
   @media (min-width: 1216px) {
@@ -36,11 +36,11 @@ export const IntroduceContainer = styled.div`
 `;
 
 export const Introduce = styled.div`
-  margin: 0 4rem;
+  margin: 0 72px;
   margin-top: 24px;
 
   @media (min-width: 1216px) {
-    width: 25%;
+    width: 28%;
     &.right--intro {
       text-align: right;
     }
@@ -50,12 +50,13 @@ export const Introduce = styled.div`
 
 export const Title = styled.div`
   color: ${typography.colors.main};
+  font-size: 20px;
   margin-bottom: 8px;
 `;
 
 export const Content = styled.div`
   color: ${typography.colors.text};
-  font-size: 16px;
+  font-size: 18px;
   font-family: sans serif;
   font-weight: bold;
 `;
@@ -92,10 +93,10 @@ export const MintButton = styled.div`
 export const Button = styled.div`
   display: inline-block;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 14px 14px;
   color: ${typography.colors.main};
   background-color: white;
-  font-size: 18px;
+  font-size: 22px;
   cursor: pointer;
 
   :hover {
@@ -108,17 +109,17 @@ export const MintLabel = styled.div`
   margin-top: 16px;
   color: ${typography.colors.label};
   text-align: center;
+  font-size: 20px;
 `;
 
 export const RecentMints = styled.div`
-  margin-top: 8rem;
 `;
 
 export const RecentLabel = styled.div`
   text-align: center;
   color: ${typography.colors.menu};
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 24px;
 `;
 
 export const Mints = styled.div`
