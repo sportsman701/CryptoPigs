@@ -47,6 +47,9 @@ export const HeaderRight = styled.div`
 export const HeaderMenu = styled.div`
   margin: 0 8px;
   cursor: pointer;
+  a {
+    color: #ff4e91;
+  }
   `;
 
 //Content

@@ -7,9 +7,9 @@ const Header: React.FC = () => {
     <S.Header>
       <S.HeaderTitle>list of piggy attributes</S.HeaderTitle>
       <S.HeaderRight>
-        <S.HeaderMenu>bodies</S.HeaderMenu>
-        <S.HeaderMenu>attributes</S.HeaderMenu>
-        <S.HeaderMenu>backgrounds</S.HeaderMenu>
+        <S.HeaderMenu><a href={"#Bodies"}>bodies</a></S.HeaderMenu>
+        <S.HeaderMenu><a href={"#Noses"}>attributes</a></S.HeaderMenu>
+        <S.HeaderMenu><a href={"#Background"}>backgrounds</a></S.HeaderMenu>
       </S.HeaderRight>
     </S.Header>
   );
