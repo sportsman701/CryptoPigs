@@ -6,6 +6,10 @@ export default createGlobalStyle`
     src: url(fonts/Chango-Regular.ttf);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body,
   #root {
     font-family: "Chango-Regular";
