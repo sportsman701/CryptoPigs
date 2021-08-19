@@ -212,4 +212,5 @@ export const ModalButton = styled.div`
   border-radius: 8px;
   padding: 8px 24px;
   margin-top: 20px;
+  cursor: pointer;
 `;

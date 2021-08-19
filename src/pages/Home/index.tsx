@@ -55,7 +55,6 @@ const Home: React.FC = () => {
       </S.RecentMints>
       <Modal
         isOpen={isOpen}
-        // onRequestClose={() => setIsOpen(false)}
         ariaHideApp={false}
         style={{
           overlay: {
@@ -112,7 +111,7 @@ const Home: React.FC = () => {
             </S.ContentDetail>
           </S.ModalContent>
           <S.ModalAction>
-            <S.ModalButton>CONFIRM</S.ModalButton>
+            <S.ModalButton onClick={() => setIsOpen(false)}>CONFIRM</S.ModalButton>
           </S.ModalAction>
         </S.ModalBody>
       </Modal>
