@@ -55,7 +55,7 @@ const Home: React.FC = () => {
       </S.RecentMints>
       <Modal
         isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
+        // onRequestClose={() => setIsOpen(false)}
         ariaHideApp={false}
         style={{
           overlay: {
